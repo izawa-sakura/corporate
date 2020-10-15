@@ -1,0 +1,476 @@
+@charset "utf-8";
+
+@mixin fontsize($size: 24) {
+
+font-size: $size + px;
+
+font-size: ($size / 10) * 1rem;
+
+}
+
+$ja_font : "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", メイリオ, Verdana, "ＭＳ Ｐゴシック", sans-serif;
+$blue1 : #42b9d0;
+$gray_blue : #eaf2f4;
+
+html {
+font-size: 62.5%;
+height: 100%;
+
+body {
+  font-family: $ja_font;
+  height: 100%;
+  
+    header{
+
+    background: $gray_blue;
+
+  #header_in{
+    padding-top: 10px;
+    padding-bottom: 4px;
+  }
+  
+  
+  @media (min-width: 550px) {
+    
+    .sp_navi{
+      display: none;
+    }
+    
+     .clearfix::after {
+      clear: both;
+      content: '';
+      display: block;
+    }
+
+    #header_in{
+      padding: 15px 0 10px 0;
+    }
+
+    .pc_navi_li{
+      margin:0;
+      padding:0;
+      float: left;
+
+      li{
+        list-style: none;
+        margin: 5px 0 0 0;
+        padding: 0;
+        float: left;
+
+        a{
+          color: #626262;
+          text-decoration: none;
+          font-weight: bold;
+          @include fontsize(14);
+          padding-right: 10px;
+        }
+
+        a:hover{
+          color: $blue1;
+        }
+      }
+      // li
+
+      li.navi_toppage a{
+
+        background-repeat:no-repeat;
+        display: inline-block;
+        line-height: 40px;
+        padding-left: 50px;
+        background-image: url("../images/top/navi_top.png");
+        background-size: 40px 40px;
+
+      }
+      // .li.navi_toppage a
+
+      li.navi_news a{
+
+        background-repeat:no-repeat;
+        display: inline-block;
+        line-height: 40px;
+        padding-left: 50px;
+
+        background-image: url("../images/top/navi_news.png");
+        background-size: 40px 40px;
+
+      }
+      // .li.navi_news a
+
+      li.navi_company a{
+
+        background-repeat:no-repeat;
+        display: inline-block;
+        line-height: 40px;
+        padding-left: 50px;
+        background-image: url("../images/top/navi_company.png");
+        background-size: 40px 40px;
+
+      }
+      // .li.navi_company a
+
+    }
+    // .pc_navi_li
+
+    .service_title{
+        @include fontsize(16);
+      }
+
+      p{
+
+        @include fontsize(13);
+      }
+  }
+
+
+  @media (max-width: 549px) {
+    
+    .pc_navi{
+      display: none;
+    }
+    
+    .logo{
+      width: 190px;
+    }
+
+    .navi{
+      width:40px;
+      float: right;
+    }
+  
+  
+
+  .sp_navi_li{
+    width: 180px;
+    position: absolute;
+    top:50px;
+    right:2%;
+    border: 1px solid #eee;
+    background: white;
+    margin: 0;
+    padding: 0;
+    display: none;
+    z-index: 100;
+
+    li{
+
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      z-index:100;
+
+      a{
+        display: block;
+        padding: 10px 8px;
+        border-bottom: 1px solid #eee;
+        font-size: 14px;
+        text-decoration: none;
+        z-index:100;
+      }
+    }
+  }
+  }
+}
+  
+    
+    #cover_area {
+        background-image: url("../images/news/sub_cover.jpg");
+        background-size: cover;
+        text-align: center;
+
+     .container{
+          padding: 81px 0;
+      }
+        .text-center {
+            text-align: center;
+            color: white;
+            font-size: 3.2rem;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 0.2rem;
+        }
+    }
+    
+     @media (max-width: 549px) {
+       #cover_area {
+         padding: 40px 0;
+         background-image: url(../images/news/sub_cover.jpg);
+         background-size: cover;
+         
+         .container {
+           padding: 0;
+         }
+       
+       .text-center {
+         font-size: 1.6rem;
+         line-height: 1.25;
+       }
+     }
+     }
+  
+  .main {
+    background-color: white;
+    padding: 35px 0 83px 0;
+  
+    
+    
+    #main {
+      padding-right: 20px;
+    }
+    
+      .title {
+        color: $blue1;
+        position: relative;
+        font-size: 2rem;
+        padding-bottom: 23px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      
+      .title::after {
+        content:"";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom: 3px solid $blue1;
+      }
+      
+      .news_lists {
+        list-style: none;
+        margin-top: 5px;
+        
+        li {
+          padding-bottom: 5px;
+        }
+        
+        span {
+          color: $blue1;
+          padding-right: 5px;
+          font-weight:bold;
+        }
+      }
+      .main-contents {
+          background-color: #f3f9fb;
+          color: $blue1;
+          padding: 13px 15px 13px;
+          font-size: 1.4rem;
+          letter-spacing: 0.2rem;
+          font-weight: bold;
+
+         .fb_iframe_widget {
+            display: inline-block;
+            position: relative;
+        }
+      }
+      
+      .main_navi_pc {
+        list-style: none;
+      }
+        
+          .main_navi {
+            display: block;
+            padding: 10px 10px 10px 20px;
+            margin-bottom: 0;
+            background-image: url(../images/news/side_arrow.png);
+            background-repeat:no-repeat;
+            background-size: 4px 8px;
+            background-position: 8px center;
+            border-bottom: 1px solid #e5e5e5;
+          }
+        
+         a {
+            text-decoration: none;
+            font-size: 1em;
+          }
+         
+         .plugin {
+           width: 100%;
+         }
+      
+  }  
+    @media (max-width: 549px) {
+      
+      .main {
+        padding: 20px 0 20px 0;
+        
+        #main {
+          padding: 0;
+        }
+      
+      .title {
+        font-size: 1.5rem;
+         padding-bottom: 18px;
+      }
+      
+      .news_lists li {
+        margin-bottom: 1rem;
+        padding: 0;
+      }
+      
+      span {
+        margin-bottom: 3px;
+        display: block;
+        font-weight: bold;
+      }
+      
+      .title::after {
+        content:"";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-bottom: 3px solid $blue1;
+      }
+      
+      .main-contents {
+        display: none;
+      }
+      
+      .main_navi_pc {
+        display: none;
+      }
+      
+      .wrapper {
+          width: 100%;
+          max-width: 500px;
+        }
+      
+      
+      .plugin {
+        display: block;
+        
+        span {
+          margin-bottom: 0;
+        }
+      }
+      
+      
+      }
+    }
+
+  
+  .footer {
+      background-color: $blue1;
+      color: white;
+      
+      .container {
+        padding-top: 30px;
+
+      }
+      
+
+      .f-adress {
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .foot_navi_sp {
+         display: none; 
+      }
+      
+      .foot_navi_pc {
+          list-style: none;
+          float: right;
+          
+          
+          
+          li {
+            list-style: none;
+            background-repeat: no-repeat;
+            background-position: left center;
+            display: inline-block;
+            float: left;
+            margin-right: 10px;
+            font-size: 1.1rem;
+            background-image: url(../images/top/foot_arroehead.png);
+            background-size: 4px 6px;
+          }
+          
+          a {
+            text-decoration: none;
+            color: white;
+            padding-left: 10px;
+          }
+      }
+      
+      .text-center {
+          text-align: center;
+          font-size: 1.1rem;
+          color: #b2e1ea;
+          margin-top: 30px;
+          padding-bottom: 2.5rem;
+          margin-bottom: 0;
+      }
+      
+      @media (max-width: 549px) {
+        
+        .center {
+        padding: 0 6%;
+      }
+      
+      .f-adress {
+        font-size: 1.6rem;
+        padding-top: 10px;
+      }
+        
+        
+        .u-max-full-width {
+          padding: 0 6%;
+          margin: 0;
+          padding-top: 20px;
+        }
+        
+        .text-center {
+          font-size: 1.1rem;
+          margin: 0;
+          padding-bottom: 2.5rem;
+        }
+        
+        img {
+          margin-left: 2rem;
+        }
+          
+          .foot_navi_pc {
+              display: none;
+          }
+        .container{
+          padding: 0;
+        }
+
+        .sp{
+          padding: 0 6%;
+          margin: 0 auto;
+        }
+
+        .foot_navi_sp{
+            display: block;
+            margin-top: 20px;
+
+          li{
+            list-style: none;
+            margin-bottom: 1px;
+    
+            a{
+              color:$blue1;
+              background-color:$gray_blue;
+              margin: 0;
+              padding: 0;
+              display: block;
+              text-align: center;
+              font-weight: bold;
+              text-decoration: none;
+              @include fontsize(16);
+              padding: 16px 0;
+              
+              img {
+                margin: 0;
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+}
+}
